@@ -1,0 +1,37 @@
+{
+  "name": "ai-knowledge-sprint",
+  "version": "1.0.0",
+  "description": "FastAPI service with Weaviate, Comet, and Friendli.ai integrations",
+  "runtime": {
+    "python": "3.11"
+  },
+  "services": [
+    {
+      "name": "weaviate",
+      "image": "semitechnologies/weaviate:1.22.4",
+      "ports": ["8080:8080"],
+      "environment": {
+        "AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED": "true",
+        "PERSISTENCE_DATA_PATH": "./data",
+        "DEFAULT_VECTORIZER_MODULE": "none",
+        "CLUSTER_HOSTNAME": "node1"
+      }
+    }
+  ],
+  "ports": [8000],
+  "build": {
+    "commands": [
+      "pip install --upgrade pip",
+      "pip install -r requirements.txt"
+    ]
+  },
+  "start": {
+    "command": "uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
+  },
+  "env": {
+    "file": ".env"
+  },
+  "dependencies": {
+    "system": ["python3.11", "python3.11-venv", "python3-pip"]
+  }
+}
