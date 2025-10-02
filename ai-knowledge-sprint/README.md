@@ -2,6 +2,23 @@
 
 Fast-track hackathon project: Python 3.11 FastAPI service integrating multiple AI/ML platforms.
 
+## 🎯 Quick Demo
+
+**Want to see it in action right now?**
+
+```bash
+docker-compose up --build
+```
+
+Then open `demo.html` in your browser for an interactive demo!
+
+**Or use the quick start script:**
+```bash
+./start-demo.sh
+```
+
+📖 **Full deployment guide:** [DEPLOYMENT.md](DEPLOYMENT.md)
+
 ## Features
 - **Weaviate**: Vector database for semantic search
 - **Sentence Transformers**: Text embeddings
@@ -9,6 +26,7 @@ Fast-track hackathon project: Python 3.11 FastAPI service integrating multiple A
 - **Comet ML**: Experiment tracking
 - **Daytona**: Dev environment orchestration
 - **ACI.dev**: Observability (configured via env vars)
+- **Interactive Demo**: HTML interface for testing all endpoints
 
 ## Quick Start (1 Hour Setup)
 
@@ -134,6 +152,31 @@ The `daytona.json` configures:
 - Weaviate service (Docker)
 - Auto-reload on changes
 - Port forwarding (8000)
+
+## 🌐 Deployment Options
+
+### Local Demo (Fastest)
+```bash
+docker-compose up --build
+# Open demo.html in your browser
+```
+
+### Cloud Deployment
+- **Railway**: `railway up` (auto-detects config)
+- **Render**: Connect GitHub repo, auto-deploys from `render.yaml`
+- **Docker**: Use provided `Dockerfile` and `docker-compose.yml`
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions.
+
+## 🎨 Interactive Demo Interface
+
+The project includes `demo.html` - a beautiful, interactive web interface to test all API endpoints:
+- Real-time API testing
+- JSON request/response viewer
+- Health monitoring
+- Works with any API URL (local or deployed)
+
+Just open `demo.html` in any browser and start testing!
 
 ## Notes
 
