@@ -8,9 +8,12 @@ def client():
     url = os.getenv("WEAVIATE_URL")
     api_key = os.getenv("WEAVIATE_API_KEY")
     if not url:
-        raise RuntimeError("WEAVIATE_URL not set")
+        raise RuntimeError("WEAVIATE_URL not set. Please set it in .env file.")
     auth = Auth.api_key(api_key) if api_key else None
-    return weaviate.WeaviateClient(url=url, auth_client_secret=auth)
+    try:
+        return weaviate.WeaviateClient(url=url, auth_client_secret=auth)
+    except Exception as e:
+        raise RuntimeError(f"Failed to connect to Weaviate at {url}: {e}")
 
 def ensure_schema(dim=384):
     c = client()
@@ -25,7 +28,7 @@ def ensure_schema(dim=384):
         )
 
 def upsert(text: str, embedding):
-    import hashlib, json
+    import hashlib
     ensure_schema(dim=len(embedding))
     c = client().collections.get(WEAV_CLASS)
     uid = hashlib.sha1(text.encode("utf-8")).hexdigest()
