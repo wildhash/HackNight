@@ -4,6 +4,8 @@ Quick guide to get a live demo running ASAP!
 
 ## 🎯 Quick Start Options
 
+![Interactive Demo Interface](https://github.com/user-attachments/assets/82044310-d084-400d-aea5-f0363e8fd324)
+
 ### Option 1: Docker Compose (Recommended for Local Demo)
 
 **Fastest way to get everything running locally:**

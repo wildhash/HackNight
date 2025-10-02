@@ -2,7 +2,7 @@
 
 Fast-track hackathon project: Python 3.11 FastAPI service integrating multiple AI/ML platforms.
 
-## 🎯 Quick Demo
+## 🎯 Live Demo in 60 Seconds
 
 **Want to see it in action right now?**
 
@@ -12,12 +12,15 @@ docker-compose up --build
 
 Then open `demo.html` in your browser for an interactive demo!
 
+![Interactive Demo UI](https://github.com/user-attachments/assets/82044310-d084-400d-aea5-f0363e8fd324)
+
 **Or use the quick start script:**
 ```bash
 ./start-demo.sh
 ```
 
-📖 **Full deployment guide:** [DEPLOYMENT.md](DEPLOYMENT.md)
+📖 **Quick Start Guide:** [QUICKSTART.md](QUICKSTART.md)  
+📖 **Full Deployment Guide:** [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ## Features
 - **Weaviate**: Vector database for semantic search
