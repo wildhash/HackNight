@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+weaviate-client
+sentence-transformers==2.7.0
+torch
+scikit-learn
+numpy
+httpx
+comet-ml==3.39.0
+pydantic

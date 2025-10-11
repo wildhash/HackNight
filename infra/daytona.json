@@ -1,0 +1,8 @@
+{
+  "name": "ai-knowledge-sprint",
+  "image": "python:3.11-slim",
+  "forwardPorts": [8080],
+  "postCreateCommand": "pip install -r requirements.txt",
+  "postStartCommand": "uvicorn app.main:app --host 0.0.0.0 --port 8080",
+  "workspaceFolder": "/workspace"
+}
